@@ -1,0 +1,152 @@
+/* =========================================================
+    STYLE GLOBAL DE LA PAGE
+   ---------------------------------------------------------
+   ========================================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background-color: lightgray;
+}
+
+/* =========================================================
+   EN-TÊTE ET NAVIGATION
+   ---------------------------------------------------------
+   ========================================================= */
+
+header {
+    background-color: #d9a404;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+nav {
+    background-color: #446b34;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+
+nav li {
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav li:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================================================
+   ZONE PRINCIPALE (MAIN + SECTIONS)
+   ---------------------------------------------------------
+   ========================================================= */
+
+.spa {
+    margin: 10px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+section {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.section-accueil {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #3a457c;
+    padding: 10px;
+}
+
+.section-accueil article {
+    background-color: #3a457c;
+    flex: 0 0 70%;
+    padding: 10px;
+}
+
+.section-accueil aside {
+    background-color: #4a2d36;
+    flex: 0 0 28%;
+    padding: 10px;
+}
+
+.section-portfolio,
+.section-demandes,
+.section-bilan,
+.section-contact {
+    background-color: #7b3a76;
+    padding: 15px;
+}
+
+/* =========================================================
+   ⚫ PIED DE PAGE
+   ---------------------------------------------------------
+   ========================================================= */
+
+footer {
+    background-color: #2b2522;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* =========================================================
+   📱 RESPONSIVE DESIGN
+   ---------------------------------------------------------
+   ========================================================= */
+
+/* Tablette : entre 400px et 800px */
+@media screen and (min-width: 400px) and (max-width: 800px) {
+    .section-accueil {
+        flex-direction: column;
+    }
+
+    .section-accueil article,
+    .section-accueil aside {
+        flex: 0 0 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Mobile : moins de 400px */
+@media screen and (max-width: 399px) {
+    .section-accueil {
+        flex-direction: column;
+    }
+
+    .section-accueil article,
+    .section-accueil aside {
+        flex: 0 0 100%;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-bottom: 5px;
+    }
+}

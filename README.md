@@ -1,5 +1,9 @@
 # Formation-Adonis
 
+Ce répository represente tout les exercices que j'ai pu réalisé pendant ma formation.
+
+## Voici la liste des cours
+
 
 [Cours HTML](https://github.com/JulianBoi-Dev/Formation-Adonis/tree/main/01%20-%20HTML/page-perso)
 

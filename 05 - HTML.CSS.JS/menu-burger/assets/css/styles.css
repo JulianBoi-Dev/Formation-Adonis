@@ -1,0 +1,82 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBAL */
+body {
+    background-color: rgb(43, 46, 49);
+    color: antiquewhite;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    padding: 20px;
+    height: 70px;
+    position: relative;
+}
+
+#menu-liens a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 1.4rem;
+    margin-right: 20px;
+}
+
+.burger-button {
+    display: none;
+    font-size: 2.2rem;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+/* -------------------------- */
+/*        RESPONSIVE          */
+/* -------------------------- */
+
+@media screen and (max-width: 650px) {
+
+    /* Cache les liens en version mobile */
+    #menu-liens a {
+        display: none;
+    }
+
+    /* Affiche l’icône burger */
+    .burger-button {
+        display: block;
+        margin-left: auto; 
+    }
+
+    /* Conteneur du menu quand il s’ouvre */
+    #menu-liens {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: brown;
+        padding: 10px 0;
+        display: none;
+        flex-direction: column;
+        text-align: left;
+        text-align: center;
+    }
+
+    /* Quand on ouvre le menu */
+    #menu-liens.show-menu {
+        display: flex !important;
+    }
+
+    /* Liens visibles quand show-menu actif */
+    #menu-liens.show-menu a {
+        display: block !important;
+        padding: 15px;
+        font-size: 1.5rem;
+    }
+}

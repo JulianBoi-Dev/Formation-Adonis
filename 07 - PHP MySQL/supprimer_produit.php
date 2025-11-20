@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 
-$id = $_GET["id_produit"];
+$id = htmlspecialchars($_GET["id_produit"]);
 
 try {
     $req = $pdo->prepare("DELETE FROM produits WHERE id_produit = ?");

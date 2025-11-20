@@ -2,9 +2,9 @@
 
 <?php
 if(isset($_POST["ajouter"])){
-    $nom = $_POST["nom_produit"];
-    $desc = $_POST["description_produit"];
-    $prix = $_POST["prix_produit"];
+    $nom = htmlspecialchars($_POST["nom_produit"]);
+    $desc = htmlspecialchars($_POST["description_produit"]);
+    $prix = htmlspecialchars($_POST["prix_produit"]);
 
     $req = $pdo->prepare("INSERT INTO produits(nom_produit, description_produit, prix_produit) VALUES (?, ?, ?)");
     $req->execute([$nom, $desc, $prix]);

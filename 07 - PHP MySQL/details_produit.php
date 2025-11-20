@@ -1,7 +1,7 @@
 <?php 
 require 'config.php';
 
-$id = $_GET["id_produit"];
+$id = htmlspecialchars($_GET["id_produit"]);
 
 $req = $pdo->prepare("SELECT * FROM produits WHERE id_produit = ?");
 $req->bindParam(1, $id);

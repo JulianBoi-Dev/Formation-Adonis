@@ -1,16 +1,16 @@
 <?php 
 require 'config.php';
 
-$id = $_GET["id_produit"];
+$id = htmlspecialchars($_GET["id_produit"]);
 
 $req = $pdo->prepare("SELECT * FROM produits WHERE id_produit = ?");
 $req->execute([$id]);
 $produit = $req->fetch(PDO::FETCH_ASSOC);
 
 if(isset($_POST["modifier"])){
-    $nom = $_POST["nom_produit"];
-    $desc = $_POST["description_produit"];
-    $prix = $_POST["prix_produit"];
+    $nom = htmlspecialchars($_POST["nom_produit"]);
+    $desc = htmlspecialchars($_POST["description_produit"]);
+    $prix = htmlspecialchars($_POST["prix_produit"]);
 
     $update = $pdo->prepare("
         UPDATE produits 

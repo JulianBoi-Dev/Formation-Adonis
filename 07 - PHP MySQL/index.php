@@ -29,7 +29,7 @@ $produits = $req->fetchAll(PDO::FETCH_ASSOC);
     <tr>
         <td><?= $p["id_produit"] ?></td>
         <td><?= $p["nom_produit"] ?></td>
-        <td><?= $p["prix_produit"] ?> €</td>
+        <td><?= number_format($p["prix_produit"], 2, ',', ' ') ?> €</td>
         <td>
             <a href="details_produit.php?id_produit=<?= $p["id_produit"] ?>" class="btn btn-info btn-sm">Détails</a>
         </td>

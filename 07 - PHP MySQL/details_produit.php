@@ -21,7 +21,7 @@ $produit = $req->fetch(PDO::FETCH_ASSOC);
 
 <h2><?= $produit["nom_produit"] ?></h2>
 <p><strong>Description :</strong> <?= $produit["description_produit"] ?></p>
-<p><strong>Prix :</strong> <?= $produit["prix_produit"] ?> €</p>
+<p><strong>Prix :</strong> <?= number_format($produit["prix_produit"], 2, ',', ' ') ?> €</p>
 
 <a href="editer_produit.php?id_produit=<?= $produit["id_produit"] ?>" class="btn btn-warning">Modifier</a>
 <a href="supprimer_produit.php?id_produit=<?= $produit["id_produit"] ?>" class="btn btn-danger">Supprimer</a>

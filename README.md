@@ -17,3 +17,4 @@ Ce répository represente tout les exercices que j'ai pu réalisé pendant ma fo
 
 [Exercices PHP](https://github.com/JulianBoi-Dev/Formation-Adonis/tree/main/06%20-%20PHP/web)
 
+[Exercices PHP/MYSQL](https://github.com/JulianBoi-Dev/Formation-Adonis/tree/main/07%20-%20PHP%20MySQL)

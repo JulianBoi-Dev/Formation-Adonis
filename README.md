@@ -1,6 +1,6 @@
 # Formation-Adonis
 
-Ce répository represente tout les exercices que j'ai pu réalisé pendant ma formation.
+Listes de tout les cours que j'ai réalisé dans ma formation Adonis en DWDM (Développement Web/Développement Mobile) en session  2025
 
 ## Voici la liste des cours
 

@@ -1,6 +1,7 @@
 <?php 
 
     require_once 'db_connexion.php';
+    require_once 'smtp_config.php';
 
     $error = "";
     $success = "";
@@ -35,9 +36,21 @@
                     $stmt->execute(array(
                         $email, $hashedPassword, $defaultRole, false
                     ));
+                    $select = $pdo->prepare("SELECT id_user FROM users WHERE email_user = ?");
+                    $select->execute([$email]);
+                    $user = $select->fetch(PDO::FETCH_ASSOC);
+                    
+
+                    $to = $email;
+                    $subject = "Activation de votre compte";
+                    $activationLink = "http://".$_SERVER['HTTP_HOST'].$folder."/validation.php?id=" . urlencode($user['id_user']);
+                    $message = "Cliquez sur le lien suivant pour activer votre compte : " .
+                        $activationLink;
+                    $headers = "From: no-reply@" . $_SERVER['HTTP_HOST'] . "\r\n";
+                    mail($to, $subject, $message, $headers);
 
 
-                    $success = "Inscription réussie ! Vous pouvez maintenant vous connecter.";
+                    $success = "Inscription réussie ! Un mail vous a été envoyé pour activer votre compte.";
                 } catch (PDOException $e) {
                     $error = "Erreur lors de l'inscription : " . $e->getMessage();
                 }

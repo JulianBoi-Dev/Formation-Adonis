@@ -40,14 +40,20 @@
                     $select->execute([$email]);
                     $user = $select->fetch(PDO::FETCH_ASSOC);
                     
-
-                    $to = $email;
-                    $subject = "Activation de votre compte";
-                    $activationLink = "http://".$_SERVER['HTTP_HOST'].$folder."/validation.php?id=" . urlencode($user['id_user']);
-                    $message = "Cliquez sur le lien suivant pour activer votre compte : " .
-                        $activationLink;
-                    $headers = "From: no-reply@" . $_SERVER['HTTP_HOST'] . "\r\n";
-                    mail($to, $subject, $message, $headers);
+                    try {
+                        $to = $email;
+                        $subject = "Activation de votre compte";
+                        $activationLink = "http://".$_SERVER['HTTP_HOST'].$folder."/validation.php?id=" . urlencode($user['id_user']);
+                        $message = "Cliquez sur le lien suivant pour activer votre compte : " .
+                            $activationLink;
+                        $headers = "From: no-reply@" . $_SERVER['HTTP_HOST'] . "\r\n";
+                        mail($to, $subject, $message, $headers);
+                    } catch (Exception $e) {
+                        $deleteStmt = $pdo->prepare("DELETE FROM users WHERE id_user = ?");
+                        $deleteStmt->execute([$user['id_user']]);
+                        $error = "Erreur lors de l'envoi de l'email d'activation (Problème SMTP ou configuration). veuillez contacter un administrateur. Votre inscription a été annulée.";
+                    }
+                    
 
 
                     $success = "Inscription réussie ! Un mail vous a été envoyé pour activer votre compte.";

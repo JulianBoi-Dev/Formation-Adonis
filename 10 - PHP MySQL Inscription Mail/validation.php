@@ -1,6 +1,6 @@
 <?php
 
-// validation.php
+
 
     require_once 'db_connexion.php';
 

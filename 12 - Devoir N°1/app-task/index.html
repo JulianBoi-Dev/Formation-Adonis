@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Tâches</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Votre liste de tâches</h1>
+
+        <div class="form-container">
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskInput">Nouvelle tâche :</label>
+                    <input type="text" id="taskInput" name="task" placeholder="Entrez une tâche..." required>
+                </div>
+                <button type="submit">Ajouter la tâche</button>
+            </form>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

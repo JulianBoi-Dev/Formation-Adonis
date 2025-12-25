@@ -28,3 +28,5 @@ Listes de tout les cours que j'ai réalisé dans ma formation Adonis en DWDM (D�
 [Exercices PHP/MYSQL (Jointure)](https://github.com/JulianBoi-Dev/Formation-Adonis/tree/main/11%20-%20PHP%20MySQL%20Jointure)
 
 [Evaluation N°1 - Devoir](https://github.com/JulianBoi-Dev/Formation-Adonis/tree/main/12%20-%20Devoir%20N%C2%B01)
+
+[Evaluation N°2 - Devoir](https://github.com/JulianBoi-Dev/Formation-Adonis/tree/main/13%20-%20Devoir%20N%C2%B02)
